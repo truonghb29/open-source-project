@@ -1,19 +1,15 @@
-import './App.css'
-import viteLogo from '/vite.svg'
+import { Provider } from 'react-redux'
+
+import { AppProvider } from './providers'
+
+import { store } from './stores'
 
 function App() {
   return (
     <>
-      <div className="flex w-[500px] justify-between">
-        <div>User</div>
-        <div className="flex">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-          <p>
-            <span className="text-red-400">Bạn</span> bè
-          </p>
-        </div>
-        <div>Chat</div>
-      </div>
+      <Provider store={store}>
+        <AppProvider />
+      </Provider>
     </>
   )
 }
