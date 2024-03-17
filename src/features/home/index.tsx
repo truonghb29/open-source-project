@@ -1,5 +1,12 @@
+import { ROUTER } from '../../config'
+
 const Home = () => {
-  return <div className="">Home page</div>
+  return (
+    <div>
+      <p>Home</p>
+      <a href={ROUTER.message}>Message</a>
+    </div>
+  )
 }
 
 export default Home

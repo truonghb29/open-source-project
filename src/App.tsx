@@ -6,11 +6,9 @@ import { store } from './stores'
 
 function App() {
   return (
-    <>
-      <Provider store={store}>
-        <AppProvider />
-      </Provider>
-    </>
+    <Provider store={store}>
+      <AppProvider />
+    </Provider>
   )
 }
 
