@@ -2,6 +2,7 @@ export type IconProps = {
   className?: string
   width?: number
   height?: number
+  handleClick?: () => void
 }
 
 export * from './ProfileIcon'
@@ -13,3 +14,5 @@ export * from './ChevronDownIcon'
 export * from './ChevronLeftIcon'
 export * from './ChevronRightIcon'
 export * from './ChevronUpIcon'
+export * from './EyeIcon'
+export * from './EyeSlashIcon'
