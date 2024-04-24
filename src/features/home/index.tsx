@@ -1,12 +1,14 @@
 import {
-  FriendIcon,
-  ProfileIcon,
   ChatIcon,
   ChevronDownIcon,
+  FriendIcon,
+  ProfileIcon,
 } from '../../assets/icons'
 import Camera from '../../components/Camera'
 import useScrollSnap from 'react-use-scroll-snap'
 import React, { useRef } from 'react'
+import { Link } from 'react-router-dom'
+import { ROUTER } from '../../config'
 
 const Home = () => {
   const scrollRef = useRef(null)
@@ -14,20 +16,28 @@ const Home = () => {
   const [url, setUrl] = React.useState<string[]>([])
 
   useScrollSnap({ ref: scrollRef, duration: 100 })
-  console.log({ url })
   return (
     <div className="w-full">
       <div className="flex justify-between">
-        <div className="p-2 rounded-full bg-[#333333]">
+        <Link
+          to={'#'}
+          className="p-2 rounded-full bg-[#333333] text-white hover:text-[#EAA72A]"
+        >
           <ProfileIcon />
-        </div>
-        <div className="flex gap-2 py-2 px-4 rounded-full bg-[#333333]">
+        </Link>
+        <Link
+          to={'#'}
+          className="flex gap-2 py-2 px-4 rounded-full bg-[#333333] text-white hover:text-[#EAA72A]"
+        >
           <FriendIcon />
           <p>Bạn bè</p>
-        </div>
-        <div className="p-2 rounded-full bg-[#333333]">
+        </Link>
+        <Link
+          to={ROUTER.message}
+          className="text-white p-2 rounded-full bg-[#333333] hover:text-[#EAA72A]"
+        >
           <ChatIcon />
-        </div>
+        </Link>
       </div>
       <div className="flex justify-center my-10">
         <Camera setUrl={setUrl} />
