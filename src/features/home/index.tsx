@@ -7,6 +7,8 @@ import {
 import Camera from '../../components/Camera'
 import useScrollSnap from 'react-use-scroll-snap'
 import React, { useRef } from 'react'
+import { Link } from "react-router-dom";
+
 
 const Home = () => {
   const scrollRef = useRef(null)
@@ -21,10 +23,12 @@ const Home = () => {
         <div className="p-2 rounded-full bg-[#333333]">
           <ProfileIcon />
         </div>
-        <div className="flex gap-2 py-2 px-4 rounded-full bg-[#333333]">
-          <FriendIcon />
-          <p>Bạn bè</p>
-        </div>
+        <Link to="/listfriend">
+          <div className="flex gap-2 py-2 px-4 rounded-full bg-[#333333] text-white">
+            <FriendIcon />
+            <p className="font-[400]">Bạn bè</p>
+          </div>
+        </Link>
         <div className="p-2 rounded-full bg-[#333333]">
           <ChatIcon />
         </div>
