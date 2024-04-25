@@ -3,4 +3,6 @@ export const ROUTER = {
   message: '/message',
   login: '/login',
   signup: '/signup',
+  listfriend: '/listfriend',
+  account: '/account',
 }

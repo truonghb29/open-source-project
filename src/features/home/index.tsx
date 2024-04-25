@@ -26,11 +26,11 @@ const Home = () => {
           <ProfileIcon />
         </Link>
         <Link
-          to={'#'}
+          to={'/listfriend'}
           className="flex gap-2 py-2 px-4 rounded-full bg-[#333333] text-white hover:text-[#EAA72A]"
         >
           <FriendIcon />
-          <p>Bạn bè</p>
+          <p className="font-[400]">Bạn bè</p>
         </Link>
         <Link
           to={ROUTER.message}
