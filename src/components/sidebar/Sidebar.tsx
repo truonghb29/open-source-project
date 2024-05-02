@@ -1,5 +1,4 @@
 import Conversations from './Conversations.js'
-import LogoutButton from './LogoutButton.js'
 import SearchInput from './SearchInput.js'
 
 const Sidebar = () => {
@@ -8,7 +7,6 @@ const Sidebar = () => {
       <SearchInput />
       <div className="divider px-3"></div>
       <Conversations />
-      <LogoutButton />
     </div>
   )
 }

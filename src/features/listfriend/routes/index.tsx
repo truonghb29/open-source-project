@@ -1,8 +1,8 @@
 import { ROUTER } from '../../../config'
 import ListFriend from '../index'
 
-const messageRouter = {
+const friendsRouter = {
   path: ROUTER.message,
   element: <ListFriend />,
 }
-export const messageRouters = [messageRouter]
+export const friendsRouters = [friendsRouter]
