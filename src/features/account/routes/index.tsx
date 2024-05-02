@@ -1,8 +1,8 @@
 import { ROUTER } from '../../../config'
 import Account from '../index'
 
-const messageRouter = {
+const accountRouter = {
   path: ROUTER.account,
   element: <Account />,
 }
-export const messageRouters = [messageRouter]
+export const accountRouters = [accountRouter]

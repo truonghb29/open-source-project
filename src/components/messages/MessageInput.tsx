@@ -14,10 +14,10 @@ const MessageInput = () => {
     setMessage('')
   }
 
-  const handleKeyDown = (e) => {
-    if (e.keyCode === 13 && !e.shiftKey) {
-      handleSubmit()
-    }
+  const handleEnter = async () => {
+    if (!message) return
+    await sendMessage(message)
+    setMessage('')
   }
 
   return (
@@ -34,7 +34,7 @@ const MessageInput = () => {
         fontSize={14}
         borderRadius={8}
         color="#cccccc"
-        onKeyDown={handleKeyDown}
+        onEnter={handleEnter}
       />
       <div>
         <button type="submit" className="flex items-end pl-0 text-[#999999]">

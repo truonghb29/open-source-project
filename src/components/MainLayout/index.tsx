@@ -9,7 +9,7 @@ const MainLayout = ({ className, children }: Props) => {
   return (
     <div
       className={twMerge(
-        'max-w-[800px] mx-auto flex justify-center px-4 pt-10 h-screen',
+        'max-w-[800px] mx-auto flex justify-center px-4 pt-10',
         className
       )}
     >

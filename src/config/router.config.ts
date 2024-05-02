@@ -5,4 +5,5 @@ export const ROUTER = {
   signup: '/signup',
   listfriend: '/listfriend',
   account: '/account',
+  profile: '/profile',
 }

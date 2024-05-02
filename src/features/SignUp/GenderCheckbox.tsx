@@ -5,10 +5,10 @@ const GenderCheckbox = ({ onCheckboxChange, selectedGender }) => {
         <label
           className={`label gap-2 cursor-pointer ${selectedGender === 'male' ? 'selected' : ''} `}
         >
-          <span className="label-text">Male</span>
+          <span className="label-text text-white">Male</span>
           <input
             type="checkbox"
-            className="checkbox border-slate-900"
+            className="checkbox border-white"
             checked={selectedGender === 'male'}
             onChange={() => onCheckboxChange('male')}
           />
@@ -18,10 +18,10 @@ const GenderCheckbox = ({ onCheckboxChange, selectedGender }) => {
         <label
           className={`label gap-2 cursor-pointer  ${selectedGender === 'female' ? 'selected' : ''}`}
         >
-          <span className="label-text">Female</span>
+          <span className="label-text text-white">Female</span>
           <input
             type="checkbox"
-            className="checkbox border-slate-900"
+            className="checkbox border-white"
             checked={selectedGender === 'female'}
             onChange={() => onCheckboxChange('female')}
           />
