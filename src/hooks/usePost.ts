@@ -10,7 +10,7 @@ const usePost = () => {
     image,
   }: {
     title: string
-    image?: string
+    image?: Object
   }) => {
     try {
       setLoading(true)
@@ -98,7 +98,26 @@ const usePost = () => {
     }
   }
 
-  return { loading, createPost, getPosts, deletePost, getUserById }
+  // Cập nhật số lượng likes của bài viết
+  const updateLikes = async (postId) => {
+    try {
+      setLoading(true)
+      const response = await fetch(`/api/posts/${postId}/likes`, {
+        method: 'PUT',
+      })
+
+      if (!response.ok) {
+        throw new Error('Failed to update likes')
+      }
+    } catch (error) {
+      console.error('Error updating likes:', error)
+      toast.error('Failed to update likes')
+    } finally {
+      setLoading(false)
+    }
+  }
+
+  return { loading, createPost, getPosts, deletePost, getUserById, updateLikes }
 }
 
 export default usePost
