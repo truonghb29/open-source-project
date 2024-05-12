@@ -27,6 +27,21 @@ const useLogout = () => {
     }
   }
 
-  return { loading, logout }
+  const deleteUser = async (userId) => {
+    try {
+      const res = await fetch(`/api/users/${userId}`, {
+        method: 'DELETE',
+      })
+      if (!res.ok) {
+        throw new Error('Failed to delete user')
+      }
+      toast.success('User deleted successfully')
+      await logout()
+    } catch (error) {
+      toast.error(error.message)
+    }
+  }
+
+  return { loading, logout, deleteUser }
 }
 export default useLogout

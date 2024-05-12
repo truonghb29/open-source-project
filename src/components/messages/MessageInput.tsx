@@ -35,6 +35,7 @@ const MessageInput = () => {
         borderRadius={8}
         color="#cccccc"
         onEnter={handleEnter}
+        keepOpened
       />
       <div>
         <button type="submit" className="flex items-end pl-0 text-[#999999]">

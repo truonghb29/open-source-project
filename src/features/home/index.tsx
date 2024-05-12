@@ -171,7 +171,6 @@ const Home = () => {
       <div className="flex flex-col gap-6 mt-6">
         {posts.map((post, index) => {
           const date = new Date(post.createdAt)
-          const liked = post.likes.find((item) => item === authUser._id)
 
           return (
             <div key={post._id} className="bg-[#333333] p-4 rounded-2xl">
@@ -215,19 +214,24 @@ const Home = () => {
                   </div>
                 )}
               </div>
-              <div className="flex justify-between mt-4">
-                <div
-                  className="flex gap-2 cursor-pointer"
-                  onClick={() => handleLike(post._id, index)}
-                >
-                  <LikeIcon
-                    className={`${!!liked ? 'text-[#0866ff]' : 'text-white'}`}
-                  />
-                  <span
-                    className={`${!!liked ? 'text-[#0866ff]' : 'text-white'}`}
-                  >
-                    Thích
+              <div className="flex justify-between mt-4 items-end">
+                <div>
+                  <span className="text-white">
+                    {post.likes.length} lượt thích
                   </span>
+                  <div
+                    className="flex gap-2 cursor-pointer"
+                    onClick={() => handleLike(post._id, index)}
+                  >
+                    <LikeIcon
+                      className={`${post.likes?.includes(authUser._id) ? 'text-[#0866ff]' : 'text-white'}`}
+                    />
+                    <span
+                      className={`${post.likes?.includes(authUser._id) ? 'text-[#0866ff]' : 'text-white'}`}
+                    >
+                      Thích
+                    </span>
+                  </div>
                 </div>
                 <div className="flex gap-2 cursor-pointer">
                   <CommentIcon className="text-white" />
