@@ -42,6 +42,33 @@ const useLogout = () => {
     }
   }
 
-  return { loading, logout, deleteUser }
+  const updateUser = async (userId, updateData) => {
+    setLoading(true)
+    try {
+      const res = await fetch(`/api/users/${userId}`, {
+        method: 'PATCH',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(updateData),
+      })
+      const data = await res.json()
+      if (res.ok) {
+        toast.success('User updated successfully')
+        // Update the auth user context if the updated user is the logged-in user
+        if (data._id === userId) {
+          setAuthUser(data)
+        }
+      } else {
+        throw new Error(data.error || 'Failed to update user')
+      }
+    } catch (error) {
+      toast.error(error.message)
+    } finally {
+      setLoading(false)
+    }
+  }
+
+  return { loading, logout, deleteUser, updateUser }
 }
 export default useLogout
